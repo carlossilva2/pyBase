@@ -1,344 +1,176 @@
-<table width="100%" cellspacing="0" cellpadding="2" border="0" summary="heading">
+# Index:
 
-<tbody>
+1. [Record](#rec-class)
+    * [Methods](#rec-meth)
+        1. [addOrQuery](#Record-addOrQuery)
+        1. [addQuery](#Record-addQuery)
+        1. [delete](#Record-delete)
+        1. [get](#Record-get)
+        1. [insert](#Record-insert)
+        1. [mark_delete](#Record-mark_delete)
+        1. [query](#Record-query)
+        1. [setLimit](#Record-setLimit)
+        1. [sort_by](#Record-sort_by)
 
-<tr bgcolor="#7799ee">
+2. [pyBase](#py-class)
+    * [Methods](#py-meth)
+        1. [delete](#pyBase-delete)
+        1. [getCreationTime](#pyBase-getCreationTime)
+        1. [update](#pyBase-update)
+        1. [updateTime](#pyBase-updateTime)
+        
+    * [Static Methods](#py-static)
+        1. [getConfigPath](#pyBase-getConfigPath)
+        1. [getDBInfo](#pyBase-getDBInfo)
+        1. [getDatabases](#pyBase-getDatabases)
 
-<td valign="bottom">   
-<font color="#ffffff" face="helvetica, arial">   
-<big><big>**pyBase**</big></big></font></td>
+# **pyBase**
 
-</tr>
+## **Classes** 
 
-</tbody>
+<a name="rec-class"></a>
+### class **Record**()
 
-</table>
+* [Record](#Record)(database=None)
 
-<table width="100%" cellspacing="0" cellpadding="2" border="0" summary="section">
+<a name="rec-meth"></a>
+#### Methods defined here:  
 
-<tbody>
+<a name="Record-addOrQuery"></a>
+* **addOrQuery**(self, field: str, operator, condition) -> object
 
-<tr bgcolor="#ee77aa">
+<a name="Record-addQuery"></a>
+* **addQuery**(self, field: str, operator, condition) -> object
 
-<td colspan="3" valign="bottom">   
-<font color="#ffffff" face="helvetica, arial"><big>**Classes**</big></font></td>
+    `Filter data by field and by providing a value`
 
-</tr>
+<a name="Record-delete"></a>
+* **delete**(self) -> None
 
-<tr>
+    `DEPRECATED METHOD`
 
-<td bgcolor="#ee77aa"></td>
+<a name="Record-get"></a>
+* **get**(self, id: str, p=False) -> pyBase.pyBase
 
-<td> </td>
+    `Returns a single database entry`  
 
-<td width="100%">
+    1. @param id - Unique record ID  
 
-<dl>
+    1. @param p - Flag for formated print  
 
-<dt><font face="helvetica, arial">Index:</font></dt>
+    1. @returns [pyBase](#pyBase) Object
 
-<dd>
+<a name="Record-insert"></a>
+* **insert**(self, json_data: dict) -> str
 
-<dl>
+    `Inserts [Record](#Record) in Database`  
 
-<dt><font face="helvetica, arial">[Record](pyBase.html#Record)</font></dt>
+    1. @param json_data - dict
 
-<dt><font face="helvetica, arial">[pyBase](pyBase.html#pyBase)</font></dt>
+<a name="Record-mark_delete"></a>
+* **mark_delete**(self, data: dict) -> object
 
-</dl>
+    `DEPRECATED METHOD`
 
-</dd>
+<a name="Record-query"></a>
+* **query**(self, p=False) -> None
 
-</dl>
+    `Returns the results of a database with/without filter options and stores in "result" variable`  
 
-<table width="100%" cellspacing="0" cellpadding="2" border="0" summary="section">
+    1. @param p - Flag for formated print  
 
-<tbody>
+    1. @returns None
 
-<tr bgcolor="#ffc8d8">
+<a name="Record-setLimit"></a>
+* **setLimit**(self, limit: int) -> None
 
-<td colspan="3" valign="bottom">   
-<font color="#000000" face="helvetica, arial"><a name="Record">class **Record**</a>()</font></td>
+    `Set the number of Records returned`  
+    1. @param limit - Number of records
 
-</tr>
+<a name="Record-sort_by"></a>
+* **sort_by**(self, field: str, order: str) -> object
 
-<tr bgcolor="#ffc8d8">
+    `Set the order of the list`  
 
-<td rowspan="2"></td>
+    1. @param field - Field of a Database  
 
-<td colspan="2"><tt>[Record](#Record)(database=None)  
+    1. @param order - If order is Ascending or Descending
 
- </tt></td>
 
-</tr>
+---
 
-<tr>
+<a name="py-class"></a>
+### class **pyBase**
 
-<td> </td>
+* [pyBase]()(record=None, database=None, index=None)  
 
-<td width="100%">Methods defined here:  
+<a name="py-meth"></a>
+#### Methods defined here:  
 
-<dl>
+<a name="pyBase-delete"></a>
+* **delete**(self) -> None
 
-<dt><a name="Record-addOrQuery">**addOrQuery**</a>(self, field: str, operator, condition) -> object</dt>
+    `Permanently deletes Record from database`
 
-</dl>
+<a name="pyBase-getCreationTime"></a>
+* **getCreationTime**(self)
 
-<dl>
+    `Returns date of Record creation`
 
-<dt><a name="Record-addQuery">**addQuery**</a>(self, field: str, operator, condition) -> object</dt>
+<a name="pyBase-update"></a>
+* **update**(self) -> None
 
-<dd><tt>Filter data by field and by providing a value</tt></dd>
+    `Permanently saves Record changes in Database`
 
-</dl>
+<a name="pyBase-updateTime"></a>
+* **updateTime**(self)
 
-<dl>
+    `Returns last update date`
 
-<dt><a name="Record-delete">**delete**</a>(self) -> None</dt>
+---
 
-<dd><tt>DEPRECATED METHOD</tt></dd>
-
-</dl>
-
-<dl>
-
-<dt><a name="Record-get">**get**</a>(self, id: str, p=False) -> pyBase.pyBase</dt>
-
-<dd><tt>Returns a single database entry  
-
-@param id - Unique record ID  
-
-@param p - Flag for formated print  
-
-@returns [pyBase](#pyBase) Object</tt></dd>
-
-</dl>
-
-<dl>
-
-<dt><a name="Record-insert">**insert**</a>(self, json_data: dict) -> str</dt>
-
-<dd><tt>Inserts [Record](#Record) in Database  
-
-@param json_data dict</tt></dd>
-
-</dl>
-
-<dl>
-
-<dt><a name="Record-mark_delete">**mark_delete**</a>(self, data: dict) -> object</dt>
-
-<dd><tt>DEPRECATED METHOD</tt></dd>
-
-</dl>
-
-<dl>
-
-<dt><a name="Record-query">**query**</a>(self, p=False) -> None</dt>
-
-<dd><tt>Returns the results of a database with/without filter options and stores in "result" variable  
-
-@param p - Flag for formated print  
-
-@returns None</tt></dd>
-
-</dl>
-
-<dl>
-
-<dt><a name="Record-setLimit">**setLimit**</a>(self, limit: int) -> None</dt>
-
-<dd><tt>Set the number of [Record](#Record) returned  
-@param limit - Number of records</tt></dd>
-
-</dl>
-
-<dl>
-
-<dt><a name="Record-sort_by">**sort_by**</a>(self, field: str, order: str) -> object</dt>
-
-<dd><tt>Set the order of the list  
-
-@param field - Field of a Database  
-
-@param order - If order is Ascending or Descending</tt></dd>
-
-</dl>
-
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-<table width="100%" cellspacing="0" cellpadding="2" border="0" summary="section">
-
-<tbody>
-
-<tr bgcolor="#ffc8d8">
-
-<td colspan="3" valign="bottom">   
-<font color="#000000" face="helvetica, arial"><a name="pyBase">class **pyBase**</a>()</font></td>
-
-</tr>
-
-<tr bgcolor="#ffc8d8">
-
-<td rowspan="2"></td>
-
-<td colspan="2"><tt>[pyBase](#pyBase)(record=None, database=None, index=None)  
-
- </tt></td>
-
-</tr>
-
-<tr>
-
-<td> </td>
-
-<td width="100%">Methods defined here:  
-
-<dl>
-
-<dt><a name="pyBase-delete">**delete**</a>(self) -> None</dt>
-
-<dd><tt>Permanently deletes [Record](#Record) from database</tt></dd>
-
-</dl>
-
-<dl>
-
-<dt><a name="pyBase-getCreationTime">**getCreationTime**</a>(self)</dt>
-
-<dd><tt>Returns date of [Record](#Record) creation</tt></dd>
-
-</dl>
-
-<dl>
-
-<dt><a name="pyBase-update">**update**</a>(self) -> None</dt>
-
-<dd><tt>Permanently saves [Record](#Record) changes in Database</tt></dd>
-
-</dl>
-
-<dl>
-
-<dt><a name="pyBase-updateTime">**updateTime**</a>(self)</dt>
-
-<dd><tt>Returns last update date</tt></dd>
-
-</dl>
-
-* * *
-
+<a name="py-static"></a>
 Static methods defined here:  
 
-<dl>
+<a name="pyBase-getConfigPath"></a>
+* **getConfigPath**()
 
-<dt><a name="pyBase-getConfigPath">**getConfigPath**</a>()</dt>
+    `Returns pyBase local path`
 
-<dd><tt>Returns [pyBase](#pyBase) local path</tt></dd>
+<a name="pyBase-getDBInfo"></a>
+* **getDBInfo**(db: str) -> None
 
-</dl>
+    `Get DB structure`
 
-<dl>
+<a name="pyBase-getDatabases"></a>
+* **getDatabases**() -> list
 
-<dt><a name="pyBase-getDBInfo">**getDBInfo**</a>(db: str) -> None</dt>
+    `Get databases in local system`
+---
 
-<dd><tt>Get DB structure</tt></dd>
+### **Functions**
 
-</dl>
+<a name="-create_database_from_schema"></a>
+* **create_database_from_schema**(verbose=False)
 
-<dl>
+<a name="-create_new_database"></a>
+* **create_new_database**(name, verbose=True)
 
-<dt><a name="pyBase-getDatabases">**getDatabases**</a>() -> list</dt>
+    `Method to create new database`
 
-<dd><tt>Get databases in local system</tt></dd>
+<a name="-encrypt"></a>
+* **encrypt**(*args, **kwargs)
 
-</dl>
+    `Method to encrypt data`
 
-</td>
+<a name="-load_data"></a>
+* **load_data**(db)
 
-</tr>
+    `Loads data from a DB`  
+    1. @param db - Name of Database  
+    1. @returns JSON dict
 
-</tbody>
+<a name="-save"></a>
+* **save**(data, where)
 
-</table>
-
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-<table width="100%" cellspacing="0" cellpadding="2" border="0" summary="section">
-
-<tbody>
-
-<tr bgcolor="#eeaa77">
-
-<td colspan="3" valign="bottom">   
-<font color="#ffffff" face="helvetica, arial"><big>**Functions**</big></font></td>
-
-</tr>
-
-<tr>
-
-<td bgcolor="#eeaa77"></td>
-
-<td> </td>
-
-<td width="100%">
-
-<dl>
-
-<dt><a name="-create_database_from_schema">**create_database_from_schema**</a>(verbose=False)</dt>
-
-</dl>
-
-<dl>
-
-<dt><a name="-create_new_database">**create_new_database**</a>(name, verbose=True)</dt>
-
-<dd><tt>Method to create new database</tt></dd>
-
-</dl>
-
-<dl>
-
-<dt><a name="-encrypt">**encrypt**</a>(*args, **kwargs)</dt>
-
-<dd><tt>Method to encrypt data</tt></dd>
-
-</dl>
-
-<dl>
-
-<dt><a name="-load_data">**load_data**</a>(db)</dt>
-
-<dd><tt>Loads data from a DB  
-@param db - Name of Database  
-@returns JSON dict</tt></dd>
-
-</dl>
-
-<dl>
-
-<dt><a name="-save">**save**</a>(data, where)</dt>
-
-<dd><tt>Save json data</tt></dd>
-
-</dl>
-
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+    `Save json data`
