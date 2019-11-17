@@ -1,0 +1,2 @@
+pick==0.6.4
+terminaltables==3.1.0
