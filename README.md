@@ -1,37 +1,46 @@
 # Index:
 
-1. [Record](#rec-class)
-    * [Methods](#rec-meth)
-        1. [addOrQuery](#Record-addOrQuery)
-        1. [addQuery](#Record-addQuery)
-        1. [delete](#Record-delete)
-        1. [get](#Record-get)
-        1. [insert](#Record-insert)
-        1. [mark_delete](#Record-mark_delete)
-        1. [query](#Record-query)
-        1. [setLimit](#Record-setLimit)
-        1. [sort_by](#Record-sort_by)
+1. [Classes](#gen-class)
+    1. [Record](#rec-class)
+        * [Methods](#rec-meth)
+            1. [addOrQuery](#Record-addOrQuery)
+            1. [addQuery](#Record-addQuery)
+            1. [delete](#Record-delete)
+            1. [get](#Record-get)
+            1. [insert](#Record-insert)
+            1. [mark_delete](#Record-mark_delete)
+            1. [query](#Record-query)
+            1. [setLimit](#Record-setLimit)
+            1. [sort_by](#Record-sort_by)
 
-2. [pyBase](#py-class)
-    * [Methods](#py-meth)
-        1. [delete](#pyBase-delete)
-        1. [getCreationTime](#pyBase-getCreationTime)
-        1. [update](#pyBase-update)
-        1. [updateTime](#pyBase-updateTime)
-        
-    * [Static Methods](#py-static)
-        1. [getConfigPath](#pyBase-getConfigPath)
-        1. [getDBInfo](#pyBase-getDBInfo)
-        1. [getDatabases](#pyBase-getDatabases)
+    2. [pyBase](#py-class)
+        * [Methods](#py-meth)
+            1. [delete](#pyBase-delete)
+            1. [getCreationTime](#pyBase-getCreationTime)
+            1. [update](#pyBase-update)
+            1. [updateTime](#pyBase-updateTime)
+            
+        * [Static Methods](#py-static)
+            1. [getConfigPath](#pyBase-getConfigPath)
+            1. [getDBInfo](#pyBase-getDBInfo)
+            1. [getDatabases](#pyBase-getDatabases)
+
+3. [Functions](#gen-func)
+    1. [create_database_from_schema](#-create_database_from_schema)
+    1. [create_new_database](#-create_new_database)
+    1. [encrypt](#-encrypt)
+    1. [load_data](#-load_data)
+    1. [save](#-save)
 
 # **pyBase**
 
+<a name="gen-class"></a>
 ## **Classes** 
 
 <a name="rec-class"></a>
 ### class **Record**()
 
-* [Record](#Record)(database=None)
+* [Record](#rec-class)(database=None)
 
 <a name="rec-meth"></a>
 #### Methods defined here:  
@@ -50,7 +59,7 @@
     `DEPRECATED METHOD`
 
 <a name="Record-get"></a>
-* **get**(self, id: str, p=False) -> pyBase.pyBase
+* **get**(self, id: str, p=False) -> [pyBase](#py-class)
 
     `Returns a single database entry`  
 
@@ -58,7 +67,7 @@
 
     1. @param p - Flag for formated print  
 
-    1. @returns [pyBase](#pyBase) Object
+    1. @returns [pyBase](#py-class) Object
 
 <a name="Record-insert"></a>
 * **insert**(self, json_data: dict) -> str
@@ -102,7 +111,7 @@
 <a name="py-class"></a>
 ### class **pyBase**
 
-* [pyBase]()(record=None, database=None, index=None)  
+* [pyBase](#py-class)(record=None, database=None, index=None)  
 
 <a name="py-meth"></a>
 #### Methods defined here:  
@@ -148,6 +157,7 @@ Static methods defined here:
     `Get databases in local system`
 ---
 
+<a name="gen-func"></a>
 ### **Functions**
 
 <a name="-create_database_from_schema"></a>
